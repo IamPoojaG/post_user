@@ -21,6 +21,9 @@ function Registration() {
     e.preventDefault();
     if (!Name || !email || !password || !phoneNumber) {
       setFlag(true);
+      setTimeout(() => {
+        setFlag(false);
+      }, 3000);
     } else {
       localStorage.setItem('Email', JSON.stringify(email));
       localStorage.setItem('Password', JSON.stringify(password));
@@ -43,8 +46,8 @@ function Registration() {
           noValidate
           autoComplete='off'
           onSubmit={handleFormSubmit}
+          style={{ width: '25rem', margin: '0 auto 0 auto' }}
         >
-          <h3>Register</h3>
           {flag && (
             <Alert severity='error'>
               I got it you are in hurry! But every Field is important!
@@ -52,6 +55,7 @@ function Registration() {
           )}
 
           <div className='form-group'>
+            <h3>Register</h3>
             <TextField
               id='outlined'
               label='Name'
