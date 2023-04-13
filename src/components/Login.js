@@ -32,53 +32,55 @@ function Login() {
   }
 
   return (
-    <div>
-      {flag && (
-        <Alert
-          style={{ width: '20rem', margin: '0 auto 0 auto' }}
-          severity='error'
-        >
-          Fill correct Info else keep trying.
-        </Alert>
-      )}
-      <Box
-        component='form'
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-        }}
-        noValidate
-        autoComplete='off'
-        onSubmit={handleLogin}
-      >
-        <div className='form-group'>
-          <h3> Login</h3>
-          <TextField
-            id='outlined'
-            label='Email'
-            placeholder='Enter Email'
-            name='password'
-            onChange={(event) => setEmailLog(event.target.value)}
-          />
-          <TextField
-            id='outlined'
-            label='Password'
-            placeholder='Enter Password'
-            name='phone number'
-            onChange={(event) => setPasswordLog(event.target.value)}
-          />
-          <Button type='submit' variant='outlined'>
-            <span>Login</span>
-          </Button>
-          <p
-            onClick={handleClick}
-            className='forgot-password text-right'
-            style={{ cursor: 'pointer' }}
+    <>
+      <div>
+        {flag && (
+          <Alert
+            style={{ width: '20rem', margin: '0 auto 0 auto' }}
+            severity='error'
           >
-            Don't have credential register again
-          </p>
-        </div>
-      </Box>
-    </div>
+            Fill correct Info else keep trying.
+          </Alert>
+        )}
+        <Box
+          component='form'
+          sx={{
+            '& .MuiTextField-root': { m: 1, width: '25ch' },
+          }}
+          noValidate
+          autoComplete='off'
+          onSubmit={handleLogin}
+        >
+          <div className='form-group'>
+            <h3> Login</h3>
+            <TextField
+              id='outlined'
+              label='Email'
+              placeholder='Enter Email'
+              name='password'
+              onChange={(event) => setEmailLog(event.target.value)}
+            />
+            <TextField
+              id='outlined'
+              label='Password'
+              placeholder='Enter Password'
+              name='phone number'
+              onChange={(event) => setPasswordLog(event.target.value)}
+            />
+            <Button type='submit' variant='outlined'>
+              <span>Login</span>
+            </Button>
+            <p
+              onClick={handleClick}
+              className='forgot-password text-right'
+              style={{ cursor: 'pointer' }}
+            >
+              Don't have credential register again
+            </p>
+          </div>
+        </Box>
+      </div>
+    </>
   );
 }
 
